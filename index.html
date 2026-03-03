@@ -2,8 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Stick RPG Flash Player</title>
-    <script src="ruffle.js"></script>
+    <title>Stick RPG Complete</title>
+    <!-- Use the stable Ruffle CDN to avoid chunk errors -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
         html, body {
             margin: 0;
@@ -12,6 +13,9 @@
             height: 100%;
             background: #111;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         #flash-container {
             width: 100%;
@@ -34,6 +38,7 @@
             document.getElementById("flash-container").appendChild(player);
             player.style.width = "100%";
             player.style.height = "100%";
+            // Make sure this matches your SWF file exactly
             player.load("Stick-RPG-Complete.swf");
         });
     </script>
